@@ -1,7 +1,5 @@
 import { http } from "@/utils/http";
-import { baseUrlApi } from "./utils";
-
-export const accountUrlPrefix = (url: string) => `/api/accounts${url}`;
+import { accountUrlPrefix, baseUrlApi } from "./utils";
 
 export type UserResult = {
   success: boolean;

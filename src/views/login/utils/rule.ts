@@ -2,7 +2,7 @@ import { reactive } from "vue";
 import { isPhone } from "@pureadmin/utils";
 import type { FormRules } from "element-plus";
 import { $t, transformI18n } from "@/plugins/i18n";
-import { useUserStoreHook } from "@/store/modules/user";
+// import { useUserStoreHook } from "@/store/modules/user";
 
 /** 6位数字验证码正则 */
 export const REGEXP_SIX = /^\d{6}$/;
@@ -26,23 +26,24 @@ const loginRules = reactive<FormRules>({
       },
       trigger: "blur"
     }
-  ],
-  verifyCode: [
-    {
-      validator: (rule, value, callback) => {
-        if (value === "") {
-          callback(new Error(transformI18n($t("login.pureVerifyCodeReg"))));
-        } else if (useUserStoreHook().verifyCode !== value) {
-          callback(
-            new Error(transformI18n($t("login.pureVerifyCodeCorrectReg")))
-          );
-        } else {
-          callback();
-        }
-      },
-      trigger: "blur"
-    }
   ]
+  // TODO 验证码部分，取消注释可以打开
+  // verifyCode: [
+  //   {
+  //     validator: (rule, value, callback) => {
+  //       if (value === "") {
+  //         callback(new Error(transformI18n($t("login.pureVerifyCodeReg"))));
+  //       } else if (useUserStoreHook().verifyCode !== value) {
+  //         callback(
+  //           new Error(transformI18n($t("login.pureVerifyCodeCorrectReg")))
+  //         );
+  //       } else {
+  //         callback();
+  //       }
+  //     },
+  //     trigger: "blur"
+  //   }
+  // ]
 });
 
 /** 手机登录校验 */

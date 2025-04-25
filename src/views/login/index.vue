@@ -59,7 +59,7 @@ const { locale, translationCh, translationEn } = useTranslationLang();
 
 const ruleForm = reactive({
   username: "admin",
-  password: "admin123",
+  password: "only_test",
   verifyCode: ""
 });
 
@@ -88,6 +88,11 @@ const onLogin = async (formEl: FormInstance | undefined) => {
           } else {
             message(t("login.pureLoginFail"), { type: "error" });
           }
+        })
+        .catch(error => {
+          const errorMessage =
+            error.response.data?.message || t("login.pureLoginFail");
+          message(errorMessage, { type: "error" });
         })
         .finally(() => (loading.value = false));
     }
