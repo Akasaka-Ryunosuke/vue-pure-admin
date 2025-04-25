@@ -70,8 +70,8 @@ const onLogin = async (formEl: FormInstance | undefined) => {
       loading.value = true;
       useUserStoreHook()
         .loginByUsername({
-          username: ruleForm.username,
-          password: ruleForm.password
+          user_name: ruleForm.username,
+          user_password: ruleForm.password
         })
         .then(res => {
           if (res.success) {
