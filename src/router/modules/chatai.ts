@@ -6,6 +6,7 @@ export default {
   meta: {
     icon: "ri/chat-search-line",
     title: "chat-ai",
+    showLink: false,
     rank: chatai
   },
   children: [

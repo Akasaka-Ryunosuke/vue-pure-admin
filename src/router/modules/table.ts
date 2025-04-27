@@ -7,6 +7,7 @@ export default {
   meta: {
     icon: "ri/table-line",
     title: $t("menus.pureTable"),
+    showLink: false,
     rank: table
   },
   children: [

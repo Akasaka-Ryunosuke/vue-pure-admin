@@ -7,6 +7,7 @@ export default {
   meta: {
     icon: "ep/menu",
     title: $t("menus.pureComponents"),
+    showLink: false,
     rank: components
   },
   children: [

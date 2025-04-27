@@ -7,6 +7,7 @@ export default {
   meta: {
     icon: "ri/list-check",
     title: $t("menus.pureList"),
+    showLink: false,
     rank: list
   },
   children: [

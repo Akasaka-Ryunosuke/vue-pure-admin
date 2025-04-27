@@ -7,6 +7,7 @@ export default {
   meta: {
     icon: "ri/checkbox-circle-line",
     title: $t("menus.pureResult"),
+    showLink: false,
     rank: result
   },
   children: [
